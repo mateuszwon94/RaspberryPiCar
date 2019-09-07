@@ -1,15 +1,10 @@
 ﻿using System;
+using System.Drawing;
 using System.IO.Ports;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Device.Gpio;
-using System.Device.Spi;
-using OpenCvSharp;
 using Maestro;
 using NeoPixel;
-using System.Drawing;
-using Iot.Device.Ws28xx;
-using Iot.Device.Graphics;
+using OpenCvSharp;
 
 class Program {
     static void Main(string[] args) {

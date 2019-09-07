@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using NeoPixel.Native;
-using System.Runtime.InteropServices;
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
+using NeoPixel.Native;
 
 namespace NeoPixel {
     public class NeoPixelPWM : IDisposable {
@@ -48,7 +48,7 @@ namespace NeoPixel {
             var initResult = PInvoke.ws2811_init(ref _ws2811);
             if (initResult != ws2811_return_t.WS2811_SUCCESS) {
                 var returnMessage = GetMessageForStatusCode(initResult);
-                throw new Exception(String.Format("Error while initializing.{0}Error code: {1}{0}Message: {2}", Environment.NewLine, initResult.ToString(), returnMessage));
+                throw new Exception(string.Format("Error while initializing.{0}Error code: {1}{0}Message: {2}", Environment.NewLine, initResult.ToString(), returnMessage));
             }
 
             AutoShow = autoShow;
@@ -74,7 +74,7 @@ namespace NeoPixel {
             var result = PInvoke.ws2811_render(ref _ws2811);
             if (result != ws2811_return_t.WS2811_SUCCESS) {
                 var returnMessage = GetMessageForStatusCode(result);
-                throw new Exception(String.Format("Error while rendering.{0}Error code: {1}{0}Message: {2}", Environment.NewLine, result.ToString(), returnMessage));
+                throw new Exception(string.Format("Error while rendering.{0}Error code: {1}{0}Message: {2}", Environment.NewLine, result.ToString(), returnMessage));
             }
         }
 
@@ -91,7 +91,6 @@ namespace NeoPixel {
                 Show();
             }
         }
-
 
         public void SetBrightnessForAll(float brightness) {
             bool tempShow = AutoShow;
