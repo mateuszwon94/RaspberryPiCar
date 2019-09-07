@@ -1,4 +1,4 @@
-namespace Native {
+namespace NeoPixel.Native {
     internal enum ws2811_return_t {
         WS2811_SUCCESS = 0,
         WS2811_ERROR_GENERIC = -1,

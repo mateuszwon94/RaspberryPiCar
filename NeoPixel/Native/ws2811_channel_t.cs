@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Native {
+namespace NeoPixel.Native {
     [StructLayout(LayoutKind.Sequential)]
     internal struct ws2811_channel_t {
         public int gpionum;

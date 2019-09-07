@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Native {
+namespace NeoPixel.Native {
     [StructLayout(LayoutKind.Sequential)]
     internal struct ws2811_t {
         public long render_wait_time;

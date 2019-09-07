@@ -1,15 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.IO.Ports;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Device.Gpio;
-using System.Device.Spi;
-using Iot.Device.Graphics;
-using Iot.Device.Ws28xx;
 using System.Drawing;
-using System.Collections;
-using Native;
+using NeoPixel.Native;
 using System.Runtime.InteropServices;
 using System.Collections.ObjectModel;
 using System.Linq;
