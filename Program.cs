@@ -45,7 +45,6 @@ class Program {
         }
 
         // LED control
-
         using NeoPixelPWM neoPixel = new NeoPixelPWM(3, 18);
         neoPixel.LEDs[0].Color = Color.Red;
         neoPixel.LEDs[1].Color = Color.Green;
