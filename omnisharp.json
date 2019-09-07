@@ -1,0 +1,45 @@
+{
+  "fileOptions": {
+    "systemExcludeSearchPatterns": [
+      "**/node_modules/**/*",
+      "**/bin/**/*",
+      "**/obj/**/*",
+      "**/node_modules/**/*"
+    ],
+    "userExcludeSearchPatterns": [
+      ".vscode/*",
+      "**/[Dd]ebug/",
+      "**/[Dd]ebugPublic/",
+      "**/[Rr]elease/",
+      "**/[Rr]eleases/",
+      "**/x64/",
+      "**/x86/",
+      "**/[Aa][Rr][Mm]/",
+      "**/[Aa][Rr][Mm]64/",
+      "**/bld/",
+      "**/[Bb]in/",
+      "**/[Oo]bj/",
+      "**/[Ll]og/",
+      "**/publish/",
+      "**/*.nupkg",
+      "**/*.snupkg",
+      "**/[Pp]ackages/*",
+      "**/*.nuget.props",
+      "**/*.nuget.targets"
+    ]
+  },
+  "FormattingOptions": {
+    "NewLinesForBracesInTypes": false,
+    "NewLinesForBracesInMethods": false,
+    "NewLinesForBracesInProperties": false,
+    "NewLinesForBracesInAccessors": false,
+    "NewLinesForBracesInAnonymousMethods": false,
+    "NewLinesForBracesInControlBlocks": false,
+    "NewLinesForBracesInAnonymousTypes": false,
+    "NewLinesForBracesInObjectCollectionArrayInitializers": false,
+    "NewLinesForBracesInLambdaExpressionBody": false,
+    "NewLineForElse": false,
+    "NewLineForCatch": false,
+    "NewLineForFinally": false
+  }
+}
