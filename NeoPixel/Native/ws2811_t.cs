@@ -10,7 +10,7 @@ namespace RaspberryPiCar.NeoPixel.Native {
         public uint   freq;
         public int    dmanum;
 
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = PInvoke.RPI_PWM_CHANNELS)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = NativeMethods.RPI_PWM_CHANNELS)]
         public ws2811_channel_t[] channel;
     }
 }

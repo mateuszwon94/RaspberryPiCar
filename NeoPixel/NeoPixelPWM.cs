@@ -50,7 +50,7 @@ namespace RaspberryPiCar.NeoPixel {
 
             // _ws2811Handle = GCHandle.Alloc(_ws2811, GCHandleType.Pinned);
 
-            var initResult = PInvoke.ws2811_init(ref ws2811_);
+            var initResult = NativeMethods.ws2811_init(ref ws2811_);
             if ( initResult != ws2811_return_t.WS2811_SUCCESS ) {
                 string returnMessage = GetMessageForStatusCode(initResult);
                 throw new Exception($"Error while initializing.{Environment.NewLine}Error code: {initResult.ToString()}{Environment.NewLine}Message: {returnMessage}");
@@ -65,7 +65,7 @@ namespace RaspberryPiCar.NeoPixel {
         /// <param name="statusCode">Status code to resolve</param>
         /// <returns></returns>
         private string GetMessageForStatusCode(ws2811_return_t statusCode) {
-            var strPointer = PInvoke.ws2811_get_return_t_str((int)statusCode);
+            var strPointer = NativeMethods.ws2811_get_return_t_str((int)statusCode);
             return Marshal.PtrToStringAuto(strPointer);
         }
 
@@ -76,7 +76,7 @@ namespace RaspberryPiCar.NeoPixel {
             int[] ledColor = LEDs.Select(x => x.GetRGBColorWIthBrightness()).ToArray();
             Marshal.Copy(ledColor, 0, ws2811_.channel[0].leds, ledColor.Count());
 
-            var result = PInvoke.ws2811_render(ref ws2811_);
+            var result = NativeMethods.ws2811_render(ref ws2811_);
             if ( result != ws2811_return_t.WS2811_SUCCESS ) {
                 string returnMessage = GetMessageForStatusCode(result);
                 throw new Exception($"Error while rendering.{Environment.NewLine}Error code: {result.ToString()}{Environment.NewLine}Message: {returnMessage}");
@@ -145,7 +145,7 @@ namespace RaspberryPiCar.NeoPixel {
                 Show();
             }
 
-            PInvoke.ws2811_fini(ref ws2811_);
+            NativeMethods.ws2811_fini(ref ws2811_);
             // _ws2811Handle.Free();
         }
 

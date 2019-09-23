@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 namespace RaspberryPiCar.NeoPixel.Native {
-    internal class PInvoke {
+    internal static class NativeMethods {
         public const int RPI_PWM_CHANNELS = 2;
 
         [DllImport("ws2811.so")]
