@@ -21,12 +21,23 @@ namespace RaspberryPiCar.Maestro {
             MaxPosition = maxPos;
         }
 
+        ~Channel() {
+            Dispose(false);
+        }
+
+        public void Dispose() {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
         /// <summary>
         /// Destroy the object by setting target to 0
         /// </summary>
-        public void Dispose() {
-            Target = 0;
-            Thread.Sleep(100);
+        protected virtual void Dispose(bool disposing) {
+            if ( disposing ) {
+                Target = 0;
+                Thread.Sleep(100);
+            }
         }
 
         /// <summary>

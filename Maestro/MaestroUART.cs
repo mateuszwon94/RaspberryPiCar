@@ -5,7 +5,7 @@ namespace RaspberryPiCar.Maestro {
     /// <summary>
     /// Pololu Mini Maestro Servo Controller which use UART to communicate 
     /// </summary> 
-    class MaestroUART : IDisposable {
+    public class MaestroUART : IDisposable {
         /// <summary>
         /// Settings to initiate Pololu Mini Maestro
         /// </summary>
@@ -44,16 +44,28 @@ namespace RaspberryPiCar.Maestro {
                 return BitConverter.ToInt16(data, 0);
             }
         }
-        
+
+        ~MaestroUART() {
+            Dispose(false);
+        }
+
         /// <summary>
         /// Destroys controller object by cleaning it channels and closing serial port
         /// </summary>
         public void Dispose() {
-            foreach ( Channel channel in Channels ) {
-                channel.Dispose();
-            }
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
 
-            serialPort_.Close();
+        protected virtual void Dispose(bool disposing) {
+            if ( disposing ) {
+                // free managed resources
+                foreach ( Channel channel in Channels ) {
+                    channel.Dispose();
+                }
+
+                serialPort_.Close();
+            }
         }
 
         /// <summary>

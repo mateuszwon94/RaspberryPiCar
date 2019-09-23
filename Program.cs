@@ -5,7 +5,7 @@ using System.Threading;
 using OpenCvSharp;
 
 namespace RaspberryPiCar {
-    public class Program {
+    public static class Program {
         public static void Main(string[] args) {
             Console.WriteLine("Hello World!");
             foreach ( string name in SerialPort.GetPortNames() ) {

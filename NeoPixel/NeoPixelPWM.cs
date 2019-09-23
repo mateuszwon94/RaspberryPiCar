@@ -125,18 +125,25 @@ namespace RaspberryPiCar.NeoPixel {
         }
 
         ~NeoPixelPWM() {
-            Dispose();
+            Dispose(false);
         }
-        
+
+        public void Dispose() {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
         /// <summary>
         /// Dispose the object. Turn off all LEDs.
         /// </summary>
-        public void Dispose() {
-            foreach ( LED led in LEDs ) {
-                led.Color = Color.Empty;
-            }
+        protected virtual void Dispose(bool disposing) {
+            if ( disposing ) {
+                foreach ( LED led in LEDs ) {
+                    led.Color = Color.Empty;
+                }
 
-            Show();
+                Show();
+            }
 
             PInvoke.ws2811_fini(ref ws2811_);
             // _ws2811Handle.Free();
