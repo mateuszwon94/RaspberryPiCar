@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace NeoPixel.Native {
+namespace RaspberryPiCar.NeoPixel.Native {
     internal class PInvoke {
         public const int RPI_PWM_CHANNELS = 2;
 

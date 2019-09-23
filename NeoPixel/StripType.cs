@@ -1,4 +1,4 @@
-﻿namespace NeoPixel {
+﻿namespace RaspberryPiCar.NeoPixel {
     /// <summary>
     /// The type of the LED strip defines the ordering of the colors (e. g. RGB, GRB, ...).
     /// Maybe the RGBValue property of the LED class needs to be changed if there are other strip types.
@@ -22,8 +22,8 @@
         WS2811_STRIP_BGR = 0x00000810,
 
         // predefined fixed LED types
-        WS2812_STRIP = WS2811_STRIP_GRB,
-        SK6812_STRIP = WS2811_STRIP_GRB,
+        WS2812_STRIP  = WS2811_STRIP_GRB,
+        SK6812_STRIP  = WS2811_STRIP_GRB,
         SK6812W_STRIP = SK6812_STRIP_GRBW,
     }
 }
